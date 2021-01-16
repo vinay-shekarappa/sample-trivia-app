@@ -99,13 +99,15 @@ class GameFragment : Fragment() {
                     } else {
                         // We've won!  Navigate to the gameWonFragment.
                         binding.submitButton.setOnClickListener {view: View ->
-                            view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+                            // view.findNavController().navigate(R.id.action_gameFragment_to_gameWonFragment)
+                            view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameWonFragment(numQuestions, questionIndex))
                         }
                     }
                 } else {
                     // Game over! A wrong answer sends us to the gameOverFragment.
                     binding.submitButton.setOnClickListener { view:View ->
-                        view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
+                        // view.findNavController().navigate(R.id.action_gameFragment_to_gameOverFragment)
+                        view.findNavController().navigate(GameFragmentDirections.actionGameFragmentToGameOverFragment())
                     }
                 }
             }
